@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 
-// Defines the schema for a Claim History entry
+// calin history dashboard schema
 
 const historySchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: 'User'    // Reference to User collection
+    ref: 'User'    // Reference to User schema
   },
-  points: Number,    // Points awarded
+  points: Number,    // Points
   timestamp: {
-    type: Date,
+    type: Date,       //now date
     default: Date.now
   }
 });
