@@ -9,7 +9,7 @@ exports.getUsers = async (req, res) => {
 };
 
 // POST /api/users
-// Add a new user
+// Add a new user by clicking on a button
 exports.addUser = async (req, res) => {
   const { name } = req.body;
   const newUser = new User({ name });
@@ -18,7 +18,7 @@ exports.addUser = async (req, res) => {
 };
 
 // POST /api/claim
-// Randomly award 1-10 points to a user and store history
+// Randomly award 1-10 points to a user and store history i history setction
 exports.claimPoints = async (req, res) => {
   const { userId } = req.body;
 
@@ -47,10 +47,10 @@ exports.getLeaderboard = async (req, res) => {
 };
 
 // GET /api/history
-// Fetch claim history (with user names)
+// Fetch claim history from the databse(with user names)
 exports.getHistory = async (req, res) => {
   const history = await History.find()
     .populate('userId', 'name') // Populate user name
-    .sort({ timestamp: -1 });   // Most recent first
+    .sort({ timestamp: -1 });   // sorting list(Most recent first)
   res.json(history);
 };
