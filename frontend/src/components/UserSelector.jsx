@@ -11,20 +11,20 @@ export default function UserSelector() {
   }, []);
 
   const fetchUsers = async () => {
-    const res = await axios.get('http://localhost:5000/api/users');
+    const res = await axios.get('https://leaderboard-1-4wi4.onrender.com/api/users');
     setUsers(res.data);
   };
 
   const handleClaim = async () => {
     if (!selected) return;
-    const res = await axios.post('http://localhost:5000/api/claim', { userId: selected });
+    const res = await axios.post('https://leaderboard-1-4wi4.onrender.com/api/claim', { userId: selected });
     alert(`${res.data.user.name} received ${res.data.points} points!`);
     fetchUsers();
   };
 
   const handleAddUser = async () => {
     if (!name) return;
-    await axios.post('http://localhost:5000/api/users', { name });
+    await axios.post('https://leaderboard-1-4wi4.onrender.com/api/users', { name });
     setName('');
     fetchUsers();
   };

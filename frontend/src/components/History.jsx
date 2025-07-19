@@ -6,7 +6,8 @@ export default function History() {
 
   useEffect(() => {
     const fetchHistory = async () => {
-      const res = await axios.get('http://localhost:5000/api/history');
+      const res = await axios.get('https://leaderboard-1-4wi4.onrender.com/api/history');
+      
       setHistory(res.data);
     };
     fetchHistory();
