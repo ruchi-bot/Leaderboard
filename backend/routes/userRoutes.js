@@ -10,19 +10,19 @@ const {
   getHistory,
 } = require('../controllers/userController');
 
-// Route: GET all users
+// get all user list
 router.get('/users', getUsers);
 
-// Route: POST new user
+// add new user
 router.post('/users', addUser);
 
-// Route: POST claim points
+// point claim
 router.post('/claim', claimPoints);
 
-// Route: GET leaderboard
+// leaderboard dashboard
 router.get('/leaderboard', getLeaderboard);
 
-// Route: GET claim history
+// claim history dashboard
 router.get('/history', getHistory);
 
 module.exports = router;
