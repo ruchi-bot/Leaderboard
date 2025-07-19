@@ -1,10 +1,10 @@
-// Connects to MongoDB using Mongoose
+// Connects to cloud MongoDB using Mongoose
 const mongoose = require('mongoose');
 
 const connectDB = async () => {
-    console.log('MONGO_URI =', process.env.MONGO_URI);
+    console.log('MONGO_URI =', process.env.MONGO_URI);       //fetching mongodb uri from enviroment file
   try {
-    await mongoose.connect(process.env.MONGO_URI, {
+    await mongoose.connect(process.env.MONGO_URI, {           //connecting mongodb
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
