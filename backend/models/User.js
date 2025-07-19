@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
 
-// Defines the schema for a User
+// database schema for users
 
 const userSchema = new mongoose.Schema({
-  name: String,
+  name: String,          //name
   totalPoints: {
     type: Number,
-    default: 0  // Start with 0 points
+    default: 0  // assign 0 point as default
   }
 });
 
